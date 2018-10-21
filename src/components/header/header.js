@@ -12,9 +12,9 @@ const Header = (props) => {
             <header className="header">
                 <div className="header-left" onClick={open} />
                 <div className="header-title">
-                    <NavLink className="header-item music" to="/music"/>
+                    <NavLink className="header-item music" to="/music" />
                     <NavLink className="header-item discover" to="/discover" />
-                    <NavLink className="header-item video" to="/video"/>
+                    <NavLink className="header-item video" to="/video" />
                 </div>
                 <div className="header-right" />
             </header>

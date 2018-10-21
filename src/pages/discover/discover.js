@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { withRouter } from "react-router-dom"
-import Slide from 'base/slider/silder.js'
+import Slider from 'base/slider/slider.js'
 import Loading from 'base/loading/loading.js'
-import { HTTP_OK } from 'common/config.js'
+// import { HTTP_OK } from 'common/config.js'
 import { formatPlayCount } from 'common/util.js'
 import './discover.scss'
 
@@ -17,22 +17,23 @@ class Discover extends Component {
     }
 
     componentDidMount() {
-        getBanner()
-            .then(res => {
-                if (res.data.code === HTTP_OK) {
-                    this.setState({
-                        banners: res.data.banners
-                    });
-                }
-            });
-        getRecommends()
-            .then(res => {
-                if (res.data.code === HTTP_OK) {
-                    this.setState({
-                        recommends: res.data.result
-                    })
-                }
-            });
+        console.log('获取轮播图数据','获取推荐歌曲数据')
+        // getBanner()
+        //     .then(res => {
+        //         if (res.data.code === HTTP_OK) {
+        //             this.setState({
+        //                 banners: res.data.banners
+        //             });
+        //         }
+        //     });
+        // getRecommends()
+        //     .then(res => {
+        //         if (res.data.code === HTTP_OK) {
+        //             this.setState({
+        //                 recommends: res.data.result
+        //             })
+        //         }
+        //     });
     }
 
     render() {
@@ -42,7 +43,7 @@ class Discover extends Component {
                 {
                     recommends.length > 0 && banners.length > 0 ?
                         <div className="Recommend">
-                            {this.state.banners && <div className="banner"><Slide ref="slide" data={this.state.banners} /></div>}
+                            {this.state.banners && <div className="banner"><Slider ref="slide" data={this.state.banners} /></div>}
                             <div className="menu">
                                 <div className="menu-item">
                                     <div className="menu-icon fm" />
